@@ -23,7 +23,12 @@ Player.prototype.move = function () {
         .set('margin-left', this.progress + "%")
         .end();
 
-    this.progress += this.getSpeed();
+    var speed = this.getSpeed();
+    if ((this.progress + speed) > this.max_progress) {
+        this.progress = this.max_progress;
+    } else {
+        this.progress += speed;
+    }
 };
 
 Player.prototype.getSpeed = function () {
