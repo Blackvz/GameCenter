@@ -13,7 +13,7 @@ function Player(dom_id) {
     this.dom_id = dom_id;
     this.move_distance = 15;
     this.interval_id = 0;
-    this.max_progress = 80;
+    this.max_progress = 95;
     this.interval_ms = 1000;
 }
 
