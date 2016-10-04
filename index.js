@@ -19,16 +19,16 @@ function Player(dom_id) {
 
 Player.prototype.move = function () {
 
-    move("#" + this.dom_id)
-        .set('margin-left', this.progress + "%")
-        .end();
-
     var speed = this.getSpeed();
     if ((this.progress + speed) > this.max_progress) {
         this.progress = this.max_progress;
     } else {
         this.progress += speed;
     }
+
+    move("#" + this.dom_id)
+        .set('margin-left', this.progress + "%")
+        .end();
 };
 
 Player.prototype.getSpeed = function () {
@@ -37,8 +37,9 @@ Player.prototype.getSpeed = function () {
 
 Player.prototype.hasWon = function() {
     if (this.progress >= this.max_progress) {
-        clearInterval(this.interval_id);
+        return true;
     }
+    return false;
 };
 
 Player.prototype.refresh = function() {
