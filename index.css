@@ -3,6 +3,10 @@ div.player img {
     width: 42px;
 }
 
+div.player {
+  display: inline;
+}
+
 .road {
     width: 90%;
     background-image: url('images/goalline.png');
