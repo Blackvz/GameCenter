@@ -1,24 +1,34 @@
 <html>
 <head>
-  <link rel="stylesheet" href="index.css">
-  <title>GameCenter Race Game</title>
+    <link rel="stylesheet" href="index.css">
+    <title>GameCenter Race Game</title>
 </head>
 
 <body>
-  <div class="road">
+<div class="road">
     <div id="player_1" class="player">
-      <img src="images/player_images/horse.png" alt="Player 1">
+        <img src="images/player_images/horse.png" alt="Player 1">
     </div>
     <br>
     <div id="player_2" class="player">
-      <img src="images/player_images/horse.png" alt="Player 2">
+        <img src="images/player_images/horse.png" alt="Player 2">
     </div>
-  </div>
+</div>
 
 <br>
 <button type="button" id="start_race">Start Race</button>
 
-  <script src='libraries/move.js/move.min.js'></script>
-  <script src="index.js"></script>
+<br><br>
+<b>Results:</b>
+<div class="results">
+    <label>
+        <textarea id="result_log" style="width:50%; height: 30%;">
+
+        </textarea>
+    </label>
+</div>
+
+<script src='libraries/move.js/move.min.js'></script>
+<script src="index.js"></script>
 </body>
 </html>
