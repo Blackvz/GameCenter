@@ -5,6 +5,12 @@ div.player img {
 
 .road {
     width: 90%;
+    background-image: url('images/goalline.png');
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: 100px;
+    background-position-x: 100%;
+    display: block;
 }
 
 #result_log {
