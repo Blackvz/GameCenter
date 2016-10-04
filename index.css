@@ -6,3 +6,8 @@ div.player img {
 .road {
     width: 90%;
 }
+
+#result_log {
+    width:40%;
+    height: 25%;
+}
