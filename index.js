@@ -15,6 +15,8 @@ function Player(dom_id) {
     this.interval_id = 0;
     this.max_progress = 95;
     this.interval_ms = 1000;
+
+    this.start_time = new Date().getTime();
 }
 
 Player.prototype.move = function () {
@@ -50,10 +52,19 @@ Player.prototype.update = function() {
     if (!this.hasWon()) {
         this.move();
     } else {
+        end_time = new Date().getTime();
+
+        time_to_win = this.getTimeToReachAim(this.start_time, end_time);
+        time_to_win_seconds = time_to_win/1000;
+
         $result_log = document.getElementById('result_log');
-        $result_log.value += this.dom_id + " reached the goal! \n";
+        $result_log.value += this.dom_id + " reached the goal! Time brought: " + time_to_win_seconds + "s \n";
         clearInterval(this.interval_id);
     }
+};
+
+Player.prototype.getTimeToReachAim = function(start_time, end_time) {
+    return end_time - start_time;
 };
 
 var button = document.getElementById('start_race');
