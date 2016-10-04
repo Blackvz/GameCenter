@@ -58,7 +58,7 @@ Player.prototype.update = function() {
         time_to_win_seconds = time_to_win/1000;
 
         $result_log = document.getElementById('result_log');
-        $result_log.value += this.dom_id + " reached the goal! Time brought: " + time_to_win_seconds + "s \n";
+        $result_log.value += this.dom_id + " reached the goal! Time needed: " + time_to_win_seconds + "s \n";
         clearInterval(this.interval_id);
     }
 };
