@@ -49,6 +49,9 @@ Player.prototype.refresh = function() {
 };
 
 Player.prototype.update = function() {
+
+    this.updateProgressView();
+
     if (!this.hasWon()) {
         this.move();
     } else {
@@ -66,6 +69,10 @@ Player.prototype.update = function() {
 Player.prototype.getTimeToReachAim = function(start_time, end_time) {
     return end_time - start_time;
 };
+
+Player.prototype.updateProgressView = function() {
+    document.getElementById(this.dom_id + '_progress').innerHTML = this.progress + '%';
+}
 
 var button = document.getElementById('start_race');
 
