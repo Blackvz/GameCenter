@@ -50,6 +50,8 @@ Player.prototype.update = function() {
     if (!this.hasWon()) {
         this.move();
     } else {
+        $result_log = document.getElementById('result_log');
+        $result_log.value += this.dom_id + " reached the goal! \n";
         clearInterval(this.interval_id);
     }
 };
